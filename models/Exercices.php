@@ -75,4 +75,20 @@ class Exercices{
             return false;
         }
     }
+
+    public static function getOne(int $id):object{
+        $sql = 'SELECT * FROM `exercices` WHERE `exercices`.`id` = :id;';
+        try{
+            $sth =  DataBase::dbConnect()->prepare($sql);
+            $sth->bindValue(':id',$id, PDO::PARAM_INT);
+            $verif = $sth ->execute();
+            if(!$verif){
+                throw new PDOException();
+            } else {
+                return $sth->fetch();
+            }
+        } catch(PDOException $e){
+            return $e;
+        }
+    }
 }

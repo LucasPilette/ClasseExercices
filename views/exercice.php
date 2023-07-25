@@ -1,0 +1,12 @@
+<table>
+    <thead>
+        <th>Nom</th>
+        <th>Description</th>
+        <th>Reps</th>
+    </thead>
+    <tbody>
+        <td><?=$exercice->name?></td>
+        <td><?=$exercice->description?></td>
+        <td><?=$exercice->repetitions?></td>
+    </tbody>
+</table>

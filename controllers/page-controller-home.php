@@ -49,7 +49,8 @@ require_once(dirname(__FILE__).'/../models/Exercices.php');
 
         if(empty($errors)){
             $exercice = new Exercices($name,$description,$repetitions);
-            $exercice->addExercice();
+            $id = $exercice->addExercice();
+            header('location: /exercice?id='.$id);
         }
     }
 
